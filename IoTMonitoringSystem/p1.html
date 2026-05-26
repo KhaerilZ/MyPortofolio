@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pendeteksi Gas ESP32 & Blynk</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Hubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Sistem Pendeteksi<span> GAS</span></div>
+            <div class="badge-iot">IoT Project</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="badge">ESP32 + Blynk Framework</span>
+            <h1>Sistem Pendeteksi Kebocoran Gas Berbasis IoT</h1>
+            <p>Solusi cerdas pemantauan kualitas udara dan deteksi dini gas berbahaya secara real-time demi keselamatan rumah dan industri Anda.</p>
+        </section>
+
+        <!-- Cara Kerja Section -->
+        <section>
+            <h2 class="section-title">Cara Kerja Sistem</h2>
+            <div class="grid scroll-reveal">
+                <!-- Step 1 -->
+                <div class="card">
+                    <div class="card-icon">💨</div>
+                    <h3>1. Deteksi Sensor (MQ-2)</h3>
+                    <p>Sensor MQ-2 mendeteksi keberadaan komponen gas berbahaya di udara, lalu mengubah konsentrasi kadar gas tersebut menjadi sinyal analog.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="card">
+                    <div class="card-icon">🤖</div>
+                    <h3>2. Pemrosesan Data (ESP32)</h3>
+                    <p>Mikrokontroler ESP32 membaca nilai analog tersebut secara berkala dan mengolah datanya untuk menentukan apakah kadar gas telah melewati ambang batas aman.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>3. Transmisi Real-Time</h3>
+                    <p>Melalui koneksi WiFi terintegrasi, ESP32 mengirimkan data pembacaan langsung ke aplikasi Blynk untuk dipantau oleh pengguna lewat smartphone.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Respon Bahaya Section -->
+        <section class="alert-box scroll-reveal">
+            <div class="alert-icon">🚨</div>
+            <div class="alert-text">
+                <h3>Mekanisme Peringatan Darurat (Ambang Batas Terlampaui)</h3>
+                <p>Jika kadar gas terdeteksi melebihi batas aman, sistem otomatis mengaktifkan perlindungan ganda: memicu alarm fisik (LED atau Buzzer) di lokasi alat, serta mengirimkan notifikasi peringatan instan ke smartphone pengguna lewat Blynk.</p>
+            </div>
+        </section>
+
+        <!-- Kesimpulan Section -->
+        <section class="summary-box scroll-reveal">
+            <h2>Pemantauan Tanpa Batas Jarak</h2>
+            <p>Dengan integrasi IoT ini, Anda dapat memantau kondisi lingkungan dari mana saja secara jarak jauh dan mendapatkan peringatan dini secara instan apabila terjadi kebocoran gas.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KhaeriL</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1 // Animasi berjalan saat 10% elemen masuk ke layar
+        });
+
+        const hiddenElements = document.querySelectorAll('.scroll-reveal');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>
